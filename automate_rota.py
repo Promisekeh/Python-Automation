@@ -131,25 +131,26 @@ def create_monthly_rota (media_team, tasks, absences, month, year):
     return pd.concat(monthly_rota, axis=1)
 
 # Example data
-tasks = ['Camera 1', 'Roaming','Pro-presenter',  'Directing', 'Live-streaming', 'Stage Manager', 'Producer']
+tasks = ['Camera 1', 'Roaming','Pro-presenter',  'Directing', 'Live-streaming', 'Stage Management', 'Producer']
 media_team = [
-    {'name': 'TJ', 'capabilities': ['Pro-presenter', 'Camera 1']},
-    {'name': 'David', 'capabilities': ['Pro-presenter', 'Camera 1']},
-    {'name': 'Tolu', 'capabilities': ['Camera 1', 'Roaming', 'Directing', 'Live-streaming']},
+    {'name': 'TJ', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming']},
+    {'name': 'David', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming']},
+    {'name': 'Tolu', 'capabilities': ['Camera 1', 'Roaming', 'Directing', 'Live-streaming', 'Stage Management']},
     {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming']},
     {'name': 'Ore', 'capabilities': ['Pro-presenter', 'Roaming', 'Live-streaming']},
-    {'name': 'Juwon', 'capabilities': ['Pro-presenter', 'Camera 1']},
+    {'name': 'Juwon', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming']},
     {'name': 'Joseph', 'capabilities': ['Pro-presenter', 'Camera 1']},
-    {'name': 'Priscilia', 'capabilities': ['Live-streaming']},
-    {'name': 'Soji', 'capabilities': ['Stage Manager', 'Directing', 'Live-streaming']},
-    {'name': 'Lady T', 'capabilities': ['Stage Manager']},
-    {'name': 'Bisi', 'capabilities': ['Stage Manager']},
-    {'name': 'Tobi', 'capabilities': ['Stage Manager', 'Pro-presenter', 'Roaming', 'Directing', 'Camera 1']},
+    {'name': 'Priscilia', 'capabilities': ['Live-streaming',  'Pro-presenter', 'Stage Management']},
+    {'name': 'Soji', 'capabilities': ['Stage Management', 'Directing', 'Live-streaming']},
+    {'name': 'Lady T', 'capabilities': ['Stage Management','Pro-presenter',   'Live-streaming', 'Camera 1']},
+    {'name': 'Bisi', 'capabilities': ['Stage Management']},
+    {'name': 'Tobi', 'capabilities': ['Stage Management', 'Pro-presenter', 'Roaming', 'Directing', 'Camera 1']},
     {'name': 'Promise', 'capabilities': ['Producer']},
     {'name': 'Seyi', 'capabilities': ['Producer']},
     {'name': 'Seye', 'capabilities': ['Producer']},
-    {'name': 'Kenny', 'capabilities': ['Stage Manager', 'Roaming']},
-    {'name': 'Tunde', 'capabilities': ['Directing', 'Camera 1']}
+    {'name': 'Kenny', 'capabilities': ['Stage Management', 'Roaming', 'Directing', ]},
+    {'name': 'Tunde', 'capabilities': ['Directing', 'Camera 1', 'Roaming', 'Live-streaming']},
+    {'name': 'Michael O.', 'capabilities': ['Directing', 'Live-streaming']}
 ]
 
 # Example absences

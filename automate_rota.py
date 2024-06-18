@@ -23,7 +23,7 @@ def create_rota(tasks, people):
 
     Parameters: 
         tasks (list): List of tasks rquired for each service
-        people(list): diction of team members and their capabilities)
+        people(list): dictionary of team members and their capabilities)
 
     Returns:
         DataFrame: of people randomly assigned to different tasks for two services for a day.  
@@ -65,6 +65,7 @@ def create_rota(tasks, people):
                 assigned_people.append(name)
                 people_available_for_service.remove(name)
                 people_available_for_task.remove(name)
+   
     return pd.DataFrame(rota).T
 
 def remove_absences (absences, sunday, people):
@@ -128,7 +129,12 @@ def create_monthly_rota (media_team, tasks, absences, month, year):
 
 
         monthly_rota[sunday]=create_rota(tasks, people)
-    return pd.concat(monthly_rota, axis=1)
+
+    monthly_rota=pd.concat(monthly_rota, axis=1)
+    for col in monthly_rota.columns:
+        #converts lists in rota to str (ie removes [])
+        monthly_rota[col]=monthly_rota[col].apply(lambda x:', '.join(x) if isinstance(x, list) else x)
+    return monthly_rota
 
 # Example data
 tasks = ['Camera 1', 'Roaming','Pro-presenter',  'Directing', 'Live-streaming', 'Stage Management', 'Producer']
@@ -136,7 +142,7 @@ media_team = [
     {'name': 'TJ', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming']},
     {'name': 'David', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming']},
     {'name': 'Tolu', 'capabilities': ['Camera 1', 'Roaming', 'Directing', 'Live-streaming', 'Stage Management']},
-    {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming']},
+    {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming', 'Producer']},
     {'name': 'Ore', 'capabilities': ['Pro-presenter', 'Roaming', 'Live-streaming']},
     {'name': 'Juwon', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming']},
     {'name': 'Joseph', 'capabilities': ['Pro-presenter', 'Camera 1']},
@@ -144,7 +150,7 @@ media_team = [
     {'name': 'Soji', 'capabilities': ['Stage Management', 'Directing', 'Live-streaming']},
     {'name': 'Lady T', 'capabilities': ['Stage Management','Pro-presenter',   'Live-streaming', 'Camera 1']},
     {'name': 'Bisi', 'capabilities': ['Stage Management']},
-    {'name': 'Tobi', 'capabilities': ['Stage Management', 'Pro-presenter', 'Roaming', 'Directing', 'Camera 1']},
+    {'name': 'Tobi', 'capabilities': ['Stage Management', 'Pro-presenter', 'Roaming', 'Directing', 'Camera 1', 'Producer']},
     {'name': 'Promise', 'capabilities': ['Producer']},
     {'name': 'Seyi', 'capabilities': ['Producer']},
     {'name': 'Seye', 'capabilities': ['Producer']},

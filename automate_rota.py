@@ -38,6 +38,7 @@ def create_rota(tasks, people):
         
         for task in tasks:
             people_available_for_task=list()
+            Service_size = 2 
             if task== 'Producer' or task=='Live-streaming': Service_size=1 #ensures we have 1 producer per service
 
             for person_ in people_available_for_service:
@@ -111,8 +112,13 @@ def create_monthly_rota (media_team, tasks, absences, month, year):
     Returns:
         Rota for the month
     '''
-    months_numbers = {'January': 1, 'February': 2, 'March': 3, 'April': 4,
-                      'May': 5, 'June': 6, 'July': 7, 'August': 8, 'September': 9, 'October': 10, 'November': 11, 'December': 12}
+    months_numbers = {'January': 1, 'Jan':1,  'February': 2, 'Feb':2,
+                      'March': 3, 'Mar':3, 'April': 4, 'Apr':4,
+                      'May': 5, 'June': 6, 'Jun':6,
+                        'July': 7, 'Jul':7,
+                          'August': 8, 'Aug':8,
+                            'September': 9, 'Sep':9, 'October': 10, 'October':10,
+                            'November': 11, 'Nov':11, 'December': 12, 'Dec':12}
     if isinstance(month, str):
         ''' 
         converts months given as string to integer
@@ -137,26 +143,31 @@ def create_monthly_rota (media_team, tasks, absences, month, year):
     return monthly_rota
 
 # Example data
-tasks = ['Camera 1', 'Roaming','Pro-presenter',  'Directing', 'Live-streaming', 'Stage Management', 'Producer']
+tasks = ['Producer', 'Camera 1', 'Roaming','Pro-presenter',  'Directing', 'Live-streaming', 'Stage Management', ]
 media_team = [
     {'name': 'TJ', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming']},
     {'name': 'David', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming']},
-    {'name': 'Tolu', 'capabilities': ['Camera 1', 'Roaming', 'Directing', 'Live-streaming', 'Stage Management']},
+    {'name': 'Tolu', 'capabilities': ['Camera 1', 'Roaming', 'Directing', 'Live-streaming', 'Stage Management', 'Producer']},
     {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming', 'Producer']},
     {'name': 'Ore', 'capabilities': ['Pro-presenter', 'Roaming', 'Live-streaming']},
-    {'name': 'Juwon', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming']},
-    {'name': 'Joseph', 'capabilities': ['Pro-presenter', 'Camera 1']},
+    {'name': 'Juwon', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming']},
+    {'name': 'Joseph', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming']},
     {'name': 'Priscilia', 'capabilities': ['Live-streaming',  'Pro-presenter', 'Stage Management']},
     {'name': 'Soji', 'capabilities': ['Stage Management', 'Directing', 'Live-streaming']},
     {'name': 'Lady T', 'capabilities': ['Stage Management','Pro-presenter',   'Live-streaming', 'Camera 1']},
-    {'name': 'Bisi', 'capabilities': ['Stage Management']},
+    {'name': 'Bisi', 'capabilities': ['Stage Management', 'Live-streaming']},
     {'name': 'Tobi', 'capabilities': ['Stage Management', 'Pro-presenter', 'Roaming', 'Directing', 'Camera 1', 'Producer']},
     {'name': 'Promise', 'capabilities': ['Producer']},
     {'name': 'Seyi', 'capabilities': ['Producer']},
-    {'name': 'Seye', 'capabilities': ['Producer']},
+    # {'name': 'Seye', 'capabilities': ['Producer']},
     {'name': 'Kenny', 'capabilities': ['Stage Management', 'Roaming', 'Directing', ]},
     {'name': 'Tunde', 'capabilities': ['Directing', 'Camera 1', 'Roaming', 'Live-streaming']},
-    {'name': 'Michael O.', 'capabilities': ['Directing', 'Live-streaming']}
+    {'name': 'Michael O.', 'capabilities': ['Directing', 'Live-streaming']},
+    {'name': 'Kelechi', 'capabilities': ['Camera 1', 'Live-streaming', 'Roaming']},
+    {'name': 'Samuel', 'capabilities': ['Pro-presenter', 'Live-streaming']},
+    {'name': 'Emmanuel', 'capabilities': ['Pro-presenter', 'Live-streaming']},
+    {'name': 'Michael T', 'capabilities': ['Camera 1', 'Roaming']},
+    {'name': 'Dr Michael', 'capabilities': ['Pro-presenter', 'Live-streaming']},
 ]
 
 # Example absences

@@ -145,16 +145,17 @@ def create_monthly_rota (media_team, tasks, absences, month, year):
 # Example data
 tasks = ['Producer', 'Camera 1', 'Roaming','Pro-presenter',  'Directing', 'Live-streaming', 'Stage Management', ]
 media_team = [
-    {'name': 'TJ', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming']},
-    {'name': 'David', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming']},
+    {'name': 'TJ', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming' 'Roaming']},
+    {'name': 'David', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming', 'Directing']},
     {'name': 'Tolu', 'capabilities': ['Camera 1', 'Roaming', 'Directing', 'Live-streaming', 'Stage Management', 'Producer']},
-    {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming', 'Producer']},
-    {'name': 'Ore', 'capabilities': ['Pro-presenter', 'Roaming', 'Live-streaming']},
+    # {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming', 'Producer']},
+    {'name': 'Olayinka', 'capabilities': ['Pro-presenter', 'Live-streaming']},
+    {'name': 'Ore', 'capabilities': ['Pro-presenter', 'Roaming', 'Live-streaming', 'Stage Management']},
     {'name': 'Juwon', 'capabilities': ['Pro-presenter', 'Camera 1', 'Roaming', 'Live-streaming']},
-    {'name': 'Joseph', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming']},
+    {'name': 'Joseph', 'capabilities': ['Pro-presenter', 'Camera 1', 'Live-streaming', 'Roaming']},
     {'name': 'Priscilia', 'capabilities': ['Live-streaming',  'Pro-presenter', 'Stage Management']},
-    {'name': 'Soji', 'capabilities': ['Stage Management', 'Directing', 'Live-streaming']},
-    {'name': 'Lady T', 'capabilities': ['Stage Management','Pro-presenter',   'Live-streaming', 'Camera 1']},
+    {'name': 'Soji', 'capabilities': ['Stage Management', 'Directing', 'Live-streaming', 'Camera 1']},
+    {'name': 'Lady T', 'capabilities': ['Stage Management','Pro-presenter',   'Live-streaming', 'Roaming']},
     {'name': 'Bisi', 'capabilities': ['Stage Management', 'Live-streaming']},
     {'name': 'Tobi', 'capabilities': ['Stage Management', 'Pro-presenter', 'Roaming', 'Directing', 'Camera 1', 'Producer']},
     {'name': 'Promise', 'capabilities': ['Producer']},
@@ -163,11 +164,17 @@ media_team = [
     {'name': 'Kenny', 'capabilities': ['Stage Management', 'Roaming', 'Directing', ]},
     {'name': 'Tunde', 'capabilities': ['Directing', 'Camera 1', 'Roaming', 'Live-streaming']},
     {'name': 'Michael O.', 'capabilities': ['Directing', 'Live-streaming']},
-    {'name': 'Kelechi', 'capabilities': ['Camera 1', 'Live-streaming', 'Roaming']},
-    {'name': 'Samuel', 'capabilities': ['Pro-presenter', 'Live-streaming']},
-    {'name': 'Emmanuel', 'capabilities': ['Pro-presenter', 'Live-streaming']},
-    {'name': 'Michael T', 'capabilities': ['Camera 1', 'Roaming']},
-    {'name': 'Dr Michael', 'capabilities': ['Pro-presenter', 'Live-streaming']},
+    {'name': 'Kelechi', 'capabilities': ['Camera 1', 'Live-streaming', 'Roaming', 'Pro-presenter']},
+    {'name': 'Samuel', 'capabilities': ['Pro-presenter', 'Live-streaming', 'Camera 1']},
+    {'name': 'Emmanuel', 'capabilities': ['Pro-presenter', 'Live-streaming', 'Camera 1']},
+    {'name':'Michael Texas', 'capabilities':['Camera 1', 'Live-streaming']},
+    {'name':'Iheanyi', 'capabilities':['Camera 1']},
+    
+    {'name':'Frank', 'capabilities':[]},
+    {'name':'TK', 'capabilities':[]}
+
+    # {'name': 'Michael T', 'capabilities': ['Camera 1', 'Roaming']},
+   
 ]
 
 # Example absences

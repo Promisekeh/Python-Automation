@@ -175,3 +175,16 @@ def create_monthly_rota(csv_file, absences, month, year, tasks=TASK_COLUMNS  ):
         monthly_rota[col] = monthly_rota[col].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
 
     return monthly_rota
+
+
+# Example usage:
+
+# file_path='Team Evaluation - LP.csv'
+# absences = {
+#     5: ['John Doe', 'Jane Smith'],  # Absent on 5th
+#     12: ['Alice Johnson'],           # Absent on 12th
+#     # Add more absences as needed
+# }
+# rota_df = create_monthly_rota(file_path, absences, 'Oct', 2025)
+
+# print(rota_df)
